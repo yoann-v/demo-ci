@@ -20,3 +20,4 @@ jobs:
       - name: "c'est une pull request ?"
         if: ${{github.event_name == 'pull request'}}
         run: echo "$PULL_REQUEST"
+        # test
