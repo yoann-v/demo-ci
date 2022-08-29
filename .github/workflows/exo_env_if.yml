@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "c'est une pull request ?"
-        if: ${{github.event_name == 'pull request'}}
+        if: ${{github.event_name == 'pull_request'}}
         run: echo "$PULL_REQUEST"
         # test
