@@ -22,7 +22,7 @@ jobs:
           DAY: Lundi
           # On essaie d'acceder à la variable $DAY déclarée dans le steps precédent
       - name: "Lundi ?"
-        run: "Quel jour sommes nous ? $DAY ?" 
+        run: echo "Quel jour sommes nous ? $DAY ?" 
 
   # Deuxieme job
   say_goodbye:
