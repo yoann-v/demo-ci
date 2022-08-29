@@ -1,0 +1,22 @@
+name: push or pull request
+
+on: workflow_dispatch
+
+env:
+  PUSH: ceci est un push
+  PULL_REQUEST: ceci est une pull request
+
+jobs:
+  whis_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "c'est un push ?"
+        if: ${{github.event_name != 'push'}}
+        run: echo "$PUSH"
+
+  whis_pl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "c'est une pull request ?"
+        if: ${{github.event_name == 'pull request'}}
+        run: echo "$PULL_REQUEST"
