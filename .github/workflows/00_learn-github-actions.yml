@@ -25,4 +25,4 @@ jobs:
       # ici, j'installe 'bats', un framework de test
       - run : npm install -g bats 
       # et la, j'utilise une commande qui retourne la version de bats
-      - run : bats-v
+      - run : bats -v
