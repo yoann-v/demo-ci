@@ -20,4 +20,3 @@ jobs:
     steps:
       - name: "c'est une pull request ?"
         run: echo "$PULL_REQUEST"
-        # test
