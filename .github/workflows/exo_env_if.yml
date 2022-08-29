@@ -17,6 +17,6 @@ jobs:
   whis_pl:
     runs-on: ubuntu-latest
     steps:
-      - name: "c'est une pull request ?"
+      - name: "c'est une pull request?"
         if: ${{github.event_name == 'pull request'}}
         run: echo "$PULL_REQUEST"
