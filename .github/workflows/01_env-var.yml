@@ -1,0 +1,32 @@
+name: Demo-Env-Var
+
+on: workflow_dispatch
+
+env: 
+  NAME: Yoann
+
+jobs:
+
+  # Premier job pour dire bonjour
+  say_hello:
+    runs-on: ubuntu-latest
+    # variable d'env accessible uniquement dans ce job
+    env:
+      ENTREPRISE: Semifir
+    steps:
+      # on test toutes les variables d'env
+      - name: "Dit bonjour !"
+        run: echo "Salut $NAME ! Tu travailles chez $ENTREPRISE ? alors, un bon $DAY à toi"
+        # variable d'env accessible uniquement dans CE steps
+        env: 
+          DAY: Lundi
+          # On essaie d'acceder à la variable $DAY déclarée dans le steps precédent
+      - name: "Lundi ?"
+        run: "Quel jour sommes nous ? $DAY ?" 
+
+  # Deuxieme job
+  say_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit au revoir !"
+        run: echo "Au revoir $NAME ! Tu travailles pour quelle entreprise ? $ENTREPRISE ?"
