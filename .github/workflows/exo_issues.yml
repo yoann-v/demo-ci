@@ -1,0 +1,12 @@
+name: exo_issues
+
+on: 
+  issues:
+    types:
+      - opened
+
+jobs:
+  exo_1:
+    runs-on: ubuntu-latest
+    steps: 
+      - run : echo "Une issues a été crée !"
