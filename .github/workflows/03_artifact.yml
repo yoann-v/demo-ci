@@ -1,0 +1,21 @@
+name: Upload artifact
+
+on: workflow_dispatch
+
+jobs:
+  Upload:
+    name: Upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: créer le fichier
+      # commande linux pour créer un fichier
+        run: echo "coucou toi <3" > artifact.txt
+      - name: upload artifact
+      # action qui permet de generer un artéfact
+        uses: actions/upload-artifact@v3
+        with:
+        # nom que l'on souhaite donner à l'artefact
+        # c'est ce nom qui apparaitre dans github
+          name: Artifact
+          # chemin de l'artéfact (dans le runner)
+          path: artifact.txt
