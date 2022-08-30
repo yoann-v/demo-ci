@@ -1,0 +1,13 @@
+name: exo_next_run
+
+on: 
+  workflow_run:
+    workflow: [exo_pr]
+    types:
+      - completed
+
+jobs:
+  exo_3:
+    runs-on: ubuntu-latest
+    steps: 
+      - run : echo "Un run auto !"
