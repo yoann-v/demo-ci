@@ -1,0 +1,13 @@
+name: exo_pr
+
+on: 
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  exo_2:
+    if: ${{github.event.pull_request.merged == true}}
+    runs-on: ubuntu-latest
+    steps: 
+      - run : echo "Une PR à été merger !"
