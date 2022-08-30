@@ -5,6 +5,7 @@ on: workflow_dispatch
 jobs:
   example_matrix:
     strategy:
+      fail-fast: true
       matrix:
         fruit: [banane, pomme, fraise, noix, ananas]
         nom: [alain, george, dylan]
