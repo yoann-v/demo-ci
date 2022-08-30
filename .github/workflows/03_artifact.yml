@@ -19,3 +19,20 @@ jobs:
           name: Artifact
           # chemin de l'artéfact (dans le runner)
           path: artifact.txt
+
+  # second job pour récupérer l'artifact produit par le 1er job
+  download:
+    name: Download
+    # doit s'executer APRES le 1er job
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: download
+      # action qui permet de dll un artifact dans un runner
+        uses: actions/download-artifact@v3
+        with:
+        # on doit lui passer le nom qu'on a donné à l'artifact (L19)
+          name: Artifact
+      - name: Lire le fichier
+      # on affiche le contenu du fichier avec 'cat'
+        run: cat artifact.txt
